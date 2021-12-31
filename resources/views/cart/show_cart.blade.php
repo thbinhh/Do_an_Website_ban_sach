@@ -6,7 +6,6 @@
             <h1 class="cat-heading d-none d-md-block">Giỏ hàng</h1>
         </div>
     </div>
-
     <div class="container  mt-3 mb-5">
         <div class="row d-block col-xs-12 d-flex">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-8 d-inline-block ">
@@ -142,11 +141,7 @@
 
             </div>
         </div>
-
-
     </div>
-
-
 </div>
 </div>
 @endsection

@@ -100,7 +100,6 @@ class CartController extends Controller
         
     }
 
-    
     public function get_payment()
     {
         echo 1;

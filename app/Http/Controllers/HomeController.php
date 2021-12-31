@@ -11,7 +11,8 @@ class HomeController extends Controller
     public function index()
     {
         $relate_product = DB::table('book')->join('author','author.AuthorID','=','book.AuthorID')->get();
-        return view('pages.home')->with('relate_product',$relate_product);
+        $detail_news = DB::table('news')->get();
+        return view('pages.home')->with('relate_product',$relate_product)->with('news',$detail_news);
     }
 
     public function login()
@@ -31,8 +32,6 @@ class HomeController extends Controller
         $username = $request->username;
         $password = bcrypt($request->password);
         $email = $request->email;
-        
-
 
         $data2['username'] = $username;
         $data2['password'] = $password;
@@ -56,9 +55,35 @@ class HomeController extends Controller
         // $this->middleware('auth');
     }
 
-    // /**
-    //  * Show the application dashboard.
-    //  *
-    //  * @return \Illuminate\Contracts\Support\Renderable
-    //  */
+    public function gioi_thieu()
+    {
+        return view('introduce.introduce');
+    }
+    public function chinh_sach()
+    {
+        return view('chinhsach.chinhsach');
+    }
+    public function lien_he()
+    {
+        return view('lienhe.lienhe');
+    }
+
+    public function search_book(Request $request){
+        $search_book = DB::table('Book')
+        ->join('Author','Author.AuthorID','=','Book.AuthorID')
+        ->join('Producer','Producer.ProducerID','=','Book.ProducerID')
+        ->join('Category','Category.CategoryID','=','Book.CategoryID')
+        ->where('BookName', 'like', '%'.$request->book.'%')
+        ->orwhere('AuthorName', 'like', '%'.$request->book.'%')
+        ->orwhere('ProducerName', 'like', '%'.$request->book.'%')
+        ->orwhere('CategoryName', 'like', '%'.$request->book.'%')
+        ->orwhere('BookID', 'like', '%'.$request->book.'%')->get();     
+        $search_author = DB::table('Author')->get();
+        $producer =  DB::table('Producer')->get();
+        $category =  DB::table('Category')->get();
+        $detail_product = DB::table('book')->get();   
+        $author = DB::table('author')->get();
+        $category = DB::table('category')->get();
+        return view('pages.search_book_cs')->with('product',$detail_product)->with('author',$author)->with('category',$category)->with('search_book', $search_book)->with('all_book1', $search_author)->with('all_book2',$producer)->with('all_book3',$category);
+    }
 }

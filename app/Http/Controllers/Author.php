@@ -20,11 +20,11 @@ class Author extends Controller
         return view('admin.add_author');
     }
 
-   public function all_author(){
+    public function all_author(){
         $all_author = DB::table('Author')->get();
         $manager_author = view('admin.all_author')->with('all_author', $all_author);
         return view('admin_layout')->with('admin.all_author',$manager_author);
-        }
+    }
 
     public function save_author(Request $request){ 
         $data = array();

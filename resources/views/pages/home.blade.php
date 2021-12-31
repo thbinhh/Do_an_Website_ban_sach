@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<div class="row p-5 m-1">
+<div class="row p-5">
 
     <div class="col-lg-9 col-md-9 col-sm-12 border">
         <div>
@@ -44,7 +44,6 @@
                 <img width="100%" class="lazy" style="image-rendering: pixelated;" alt="Văn học nổi tiếng" src="//bizweb.dktcdn.net/100/415/471/themes/804607/assets/bn_pr_3.png?1634809483920">
             </a>
         </div>
-
         <div>
             <div>
                 <div id="" class="carousel slide" data-bs-ride="">
@@ -109,9 +108,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
     </div>
@@ -134,7 +130,7 @@
     </div>
 </div>
 
-<div class="row p-5 m-1">
+<div class="row p-5">
 
     <div class="col-lg-9 col-md-9 col-sm-12 border">
         <div>
@@ -310,139 +306,34 @@
             Tin tức - Sự kiện
         </h2>
         <article class="row">
+            @foreach($news as $key => $value)
             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                 <div class="item_grid mb-4">
                     <div class="position-relative">
-                        <a href="#" title="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens" class="effect-ming">
+                        <a href="{{URL::to('/news-detail/'.$value->NewsID)}}"  class="effect-ming">
                             <div class="position-relative w-100 m-0 be_opa modal-open">
-                                <img src="{{asset('./../public/frontend/image/thiet-ke-khong-ten-4.png')}}" class="lazy loaded" alt="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens" width="300px;">
+                                <img src="{{asset('./../public/frontend/image/'.$value->Img)}}" class="lazy loaded" alt="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens" width="300px;">
                                 <div class="position-absolute w-100 h-100 overlay"></div>
                             </div>
                         </a>
-
                         <div class="entry-date position-absolute text-center rounded-right">
                             <p class="day font-weight-bold m-0">
-                                24
+                            {{$value->NewsDay}}
                             </p>
                             <p class="yeah">
-                                02/2021
+                            {{$value->NewsMonthYear}}
                             </p>
                         </div>
                     </div>
                     <div class="cont">
-                        <h6 class="font-weight-bold mt-2" href="#" title="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens">Review sách Xa ngoài
-                            kia nơi loài tôm hát của Delia Owens</h6>
+                        <h6 class="font-weight-bold mt-2" href="#" title="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens">Review sách {{$value->NewsName}}</h6>
                         <div class="line_3 line_1 h-auto">
-                            Cuốn sách Xa ngoài kia nơi loài tôm hát (Tên gốc: Where the Crawdads Sing) tiểu thuyết
-                            đầu tay của nhà văn Delia Owens được xuất bản lần đầu năm 2018, nhưng đã nhanh chóng
-                            chiếm được sự yêu mến của đông đảo độc giả. Cuốn sách liên tục đứng trong danh sách bán
-                            chạy của New York Times suốt 58 tuần với 6 triệu bản được bán ra trên toàn thế giới và
-                            dẫn đầu mục tiểu thuyết bán chạy của Amazon trong năm 2019.
-                            Delia Owens sinh năm 1949, là tác giả, nhà động...
+                        {{$value->short_decription}}
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="item_grid mb-4">
-                    <div class="position-relative">
-                        <a href="#" title="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens" class="effect-ming">
-                            <div class="position-relative w-100 m-0 be_opa modal-open">
-                                <img src="{{asset('./../public/frontend/image/thiet-ke-khong-ten-3.png')}}" class="lazy loaded" alt="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens" width="300px;">
-                                <div class="position-absolute w-100 h-100 overlay"></div>
-                            </div>
-                        </a>
-
-                        <div class="entry-date position-absolute text-center rounded-right">
-                            <p class="day font-weight-bold">
-                                29
-                            </p>
-                            <p class="yeah">
-                                02/2021
-                            </p>
-                        </div>
-                    </div>
-                    <div class="cont">
-                        <h6 class="mt-2" href="#" title="Review sách Vô cùng tàn nhẫn vô cùng yêu thương">Review
-                            sách Vô cùng tàn nhẫn vô cùng yêu thương</h6>
-                        <div class="line_3 line_1 h-auto">
-                            Ý nghĩa của quyển sách Vô cùng tàn nhẫn vô cùng yêu thương
-                            Hành trình nuôi dạy trẻ nhỏ là một trong những trải nghiệm mà có thể không một cha mẹ
-                            nào quên. Khi con trong giai đoạn vừa chào đời phải quan sát theo từng hành động, từng
-                            cử chỉ nhỏ nhặt nhất của con. Lớn hơn một xíu, bố mẹ phải đối mặt với hàng ngàn câu hỏi
-                            vì sao và cùng con khám phá chân trời mới. Bắt đầu vào giai đoạn đi học đến trường, đó
-                            sẽ là những trải nghiệm...
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="item_grid mb-4">
-                    <div class="position-relative">
-                        <a href="#" title="Review sách Luật hấp dẫn bí mật tối cao" class="effect-ming">
-                            <div class="position-relative w-100 m-0 be_opa modal-open">
-                                <img src="{{asset('./../public/frontend/image/thiet-ke-khong-ten-2.png')}}" class="lazy loaded" alt="Review sách Luật hấp dẫn bí mật tối cao" width="300px;">
-                                <div class="position-absolute w-100 h-100 overlay"></div>
-                            </div>
-                        </a>
-
-                        <div class="entry-date position-absolute text-center rounded-right">
-                            <p class="day font-weight-bold">
-                                05
-                            </p>
-                            <p class="yeah">
-                                04/2021
-                            </p>
-                        </div>
-                    </div>
-                    <div class="cont">
-                        <h6 class="font-weight-bold mt-2" href="#" title="Review sách Xa ngoài kia nơi loài tôm hát của Delia Owens">Review sách Luật hấp
-                            dẫn bí mật tối cao</h6>
-                        <div class="line_3 line_1 h-auto">
-                            Đôi nét về tác giả quyển sách Luật hấp dẫn – Bí mật tối cao
-                            Tác giả của quyển sách Luật hấp dẫn – Bí mật tối cao chính là Som Sujeera – một trong
-                            những người ấp ủ niềm đam mê khám phá những bí ẩn có trong vũ trụ. Đặc biệt hơn khi được
-                            lớn lên trong môi trường thiên về Phật giáo, ông lại càng có thêm nhiều phát hiện đặc
-                            sắc liên quan giữa con người đối với những bí ẩn trong cuộc sống. Sách...
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="item_grid mb-4">
-                    <div class="position-relative">
-                        <a href="#" title="Review sách Bình tĩnh khi ế, mạnh mẽ khi yêu - All The Rules" class="effect-ming">
-                            <div class="position-relative w-100 m-0 be_opa modal-open">
-                                <img src="{{asset('./../public/frontend/image/thiet-ke-khong-ten-1.png')}}" class="lazy loaded" alt="Review sách Bình tĩnh khi ế, mạnh mẽ khi yêu - All The Rules" width="300px;">
-                                <div class="position-absolute w-100 h-100 overlay"></div>
-                            </div>
-                        </a>
-
-                        <div class="entry-date position-absolute text-center rounded-right">
-                            <p class="day font-weight-bold">
-                                24
-                            </p>
-                            <p class="yeah">
-                                02/2021
-                            </p>
-                        </div>
-                    </div>
-                    <div class="cont">
-                        <h6 class="font-weight-bold mt-2 line_1" href="#" title="Review sách Bình tĩnh khi ế, mạnh mẽ khi yêu - All The Rules">Review sách Bình
-                            tĩnh khi ế, mạnh mẽ khi yêu - All The Rules</h6>
-                        <div class="line_3 line_1 h-auto">
-                            Sách “ Bình tĩnh khi ế mạnh mẽ khi yêu ” là bản dịch tiếng Việt từ tác phẩm All the rule
-                            . Đây là một thể loại sách kỹ năng (hay còn gọi là Self-Help) do 2 tác giả người Mỹ viết
-                            nên đó là Ellen Fein và Sherrie Schneider . Cuốn sách được xuất bản lần đầu tiên năm
-                            1995 tại Mỹ và nhanh chóng trở thành tác phẩm được đông đảo phụ nữ Mỹ đón nhận. Không
-                            chỉ vậy, trải qua 2 thập kỷ, cuốn sách đã trở thành bí quyết gối...
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </article>
     </div>
 </div>

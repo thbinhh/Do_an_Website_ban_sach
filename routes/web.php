@@ -214,7 +214,7 @@ Route::get('/logout', [AdminController::class, 'get_logout'])->name('logout.get'
 
 
 Route::get('/news', [NewsController::class, 'show_news']);
-Route::get('/news-detail', [NewsController::class, 'detail_news']);
+Route::get('/news-detail/{NewsID}', [NewsController::class, 'detail_news']);
 
 Route::get('/delete-to-cart/{rowId}', [CartController::class, 'delete_cart']);
 
@@ -222,3 +222,9 @@ Route::get('/delete-to-cart/{rowId}', [CartController::class, 'delete_cart']);
 Route::get('/checkout', [CartController::class, 'checkout']);
 Route::get('/payment', [CartController::class, 'get_payment']);
 Route::post('/payment', [CartController::class, 'post_payment']);
+
+Route::get('/gioi-thieu', [HomeController::class, 'gioi_thieu']);
+Route::get('/chinh-sach', [HomeController::class, 'chinh_sach']);
+Route::get('/lien-he', [HomeController::class, 'lien_he']);
+
+Route::get('/search-bookcs', [HomeController::class, 'search_book']);
